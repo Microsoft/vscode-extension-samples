@@ -1,0 +1,50 @@
+{
+	"name": "helloworld-jest-test-sample",
+	"displayName": "helloworld-jest-test-sample",
+	"description": "Hello World Jest Sample for VS Code",
+	"version": "0.0.1",
+	"publisher": "vscode-samples",
+	"repository": "https://github.com/Microsoft/vscode-extension-samples/helloworld-jest-test-sample",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.helloWorld"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/tests/runTest.js",
+		"test:update": "cross-env JEST_RUNNER_UPDATE_SNAPSHOTS=true npm test"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^8.10.25",
+		"@types/vscode": "^1.32.0",
+		"cross-env": "7.0.0",
+		"glob": "^7.1.4",
+		"jest": "^25.1.0",
+		"source-map-support": "^0.5.12",
+		"ts-jest": "^25.0.0",
+		"tslint": "^5.16.0",
+		"typescript": "^3.5.1",
+		"vscode-jest-test-runner": "^1.0.0",
+		"vscode-test": "^1.3.0"
+	}
+}

@@ -1,0 +1,90 @@
+// A launch configuration that compiles the extension and then opens it inside a new window
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run Extension",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": ["--disable-extensions", "--extensionDevelopmentPath=${workspaceFolder}"],
+			"outFiles": ["${workspaceFolder}/out/**/*.js"],
+			"preLaunchTask": "npm: watch"
+		},
+		{
+			"name": "Jest: Extension Tests",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--disable-extensions",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--extensionTestsPath=${workspaceFolder}/node_modules/vscode-test/out/jest-runner"
+			],
+			"outFiles": ["${workspaceFolder}/out/**/*.js"],
+			"preLaunchTask": "npm: compile",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"JEST_RUNNER_TEST_REGEX": "",
+				"JEST_RUNNER_UPDATE_SNAPSHOTS": "false"
+			}
+		},
+		{
+			"name": "Jest: Current Test File",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--disable-extensions",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--extensionTestsPath=${workspaceFolder}/node_modules/vscode-test/out/jest-runner"
+			],
+			"outFiles": ["${workspaceFolder}/out/**/*.js"],
+			"preLaunchTask": "npm: compile",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"JEST_RUNNER_TEST_REGEX": "${file}",
+				"JEST_RUNNER_UPDATE_SNAPSHOTS": "false"
+			}
+		},
+		{
+			"name": "Jest: Update All Snapshots",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--disable-extensions",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--extensionTestsPath=${workspaceFolder}/node_modules/vscode-test/out/jest-runner"
+			],
+			"outFiles": ["${workspaceFolder}/out/**/*.js"],
+			"preLaunchTask": "npm: compile",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"JEST_RUNNER_TEST_REGEX": "",
+				"JEST_RUNNER_UPDATE_SNAPSHOTS": "true"
+			}
+		},
+		{
+			"name": "Jest: Update Snapshots in Current Test File",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--disable-extensions",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--extensionTestsPath=${workspaceFolder}/node_modules/vscode-test/out/jest-runner"
+			],
+			"outFiles": ["${workspaceFolder}/out/**/*.js"],
+			"preLaunchTask": "npm: compile",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"JEST_RUNNER_TEST_REGEX": "${file}",
+				"JEST_RUNNER_UPDATE_SNAPSHOTS": "true"
+			}
+		}
+	]
+}
