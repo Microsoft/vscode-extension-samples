@@ -4,7 +4,7 @@
 
 import * as vscode from 'vscode';
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(extension: vscode.ExtensionContext) {
 
 	const provider1 = vscode.languages.registerCompletionItemProvider('plaintext', {
 
@@ -68,5 +68,5 @@ export function activate(context: vscode.ExtensionContext) {
 		'.' // triggered whenever a '.' is being typed
 	);
 
-	context.subscriptions.push(provider1, provider2);
+	extension.subscriptions.push(provider1, provider2);
 }
