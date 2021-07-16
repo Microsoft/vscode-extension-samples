@@ -238,7 +238,7 @@ class MultiStepInput {
 					this.current.dispose();
 				}
 				this.current = input;
-				this.current.show();
+				setTimeout(() => input.show(), 5);
 			});
 		} finally {
 			disposables.forEach(d => d.dispose());
@@ -297,7 +297,7 @@ class MultiStepInput {
 					this.current.dispose();
 				}
 				this.current = input;
-				this.current.show();
+				setTimeout(() => input.show(), 5);
 			});
 		} finally {
 			disposables.forEach(d => d.dispose());
