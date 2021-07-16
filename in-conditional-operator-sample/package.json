@@ -1,0 +1,60 @@
+{
+  "name": "dynamic_context_menus",
+  "displayName": "in conditional operator sample",
+  "description": "Example of using the 'in' conditional operator in VSCode",
+  "version": "0.0.1",
+  "publisher": "vscode-samples",
+  "repository": "https://github.com/Microsoft/vscode-extension-samples/in-conditional-operator-sample",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/package.json"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.runTests",
+          "when": "resourcePath in ext:pkgJsonWithTestScript"
+        },
+        {
+          "command": "extension.installDependencies",
+          "when": "resourcePath in ext:pkgJsonWithDependencies"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "extension.runTests",
+        "title": "Run Tests"
+      },
+      {
+        "command": "extension.installDependencies",
+        "title": "Install Dependencies"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.0",
+    "@types/vscode": "^1.32.0",
+    "@types/lodash": "^4.14.168",
+    "@typescript-eslint/eslint-plugin": "^4.16.0",
+    "@typescript-eslint/parser": "^4.16.0",
+    "eslint": "^7.21.0",
+    "typescript": "^4.2.2"
+  }
+}

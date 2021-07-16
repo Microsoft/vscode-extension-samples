@@ -1,0 +1,8 @@
+{
+  "name": "with-scripts",
+  "version": "1.0.0",
+  "description": "Example of a package.json with `test script` but without `dependencies` sections",
+  "scripts": {
+    "test" : "echo \"hello cruel world!\""
+  }
+}

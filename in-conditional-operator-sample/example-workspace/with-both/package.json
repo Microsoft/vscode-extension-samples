@@ -1,0 +1,11 @@
+{
+	"name": "with-deps",
+	"version": "1.0.0",
+	"description": "Example of a package.json with both `dependencies` and `test script` sections",
+	"dependencies": {
+		"lodash": "^4.17.21"
+	},
+	"scripts": {
+		"test": "echo \"hello cruel world!\""
+	}
+}

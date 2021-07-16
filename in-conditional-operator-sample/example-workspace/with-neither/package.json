@@ -1,0 +1,8 @@
+{
+  "name": "with-deps",
+  "version": "1.0.0",
+  "description": "Example of a package.json without both `dependencies` and `test script` sections",
+  "scripts": {
+    "build" : "echo \"compiling...\""
+  }
+}

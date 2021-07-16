@@ -1,0 +1,6 @@
+node_modules
+
+# These are part of the demo flow
+# no need to pollute the source control
+package-lock.json
+
