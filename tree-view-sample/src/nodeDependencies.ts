@@ -45,17 +45,30 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 		if (this.pathExists(packageJsonPath)) {
 			const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
+			// Fixed an issue with infinite expansion
 			const toDep = (moduleName: string, version: string): Dependency => {
 				if (this.pathExists(path.join(this.workspaceRoot, 'node_modules', moduleName))) {
-					return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.Collapsed);
-				} else {
-					return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.None, {
-						command: 'extension.openPackageOnNpm',
-						title: '',
-						arguments: [moduleName]
-					});
+					if (packageJson.dependencies[moduleName] !== version){
+						return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.None, {
+							command: 'extension.openPackageOnNpm',
+							title: '',
+							arguments: [moduleName]
+						});
+					} else {
+						return new Dependency(
+							moduleName,
+							version,
+							vscode.TreeItemCollapsibleState.Collapsed
+						);
+					}
 				}
-			};
+
+				return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.None, {
+					command: 'extension.openPackageOnNpm',
+					title: '',
+					arguments: [moduleName]
+				});
+			}
 
 			const deps = packageJson.dependencies
 				? Object.keys(packageJson.dependencies).map(dep => toDep(dep, packageJson.dependencies[dep]))
