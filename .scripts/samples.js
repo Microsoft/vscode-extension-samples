@@ -191,6 +191,27 @@ const samples = [
     contributions: []
   },
   {
+    description: 'Document Insert Sample',
+    path: 'document-insert-sample',
+    guide: null,
+    apis: [
+      'commands.registerCommand',
+      'window.activeTextEditor',
+      'TextEditor',
+      'TextEditor.edit',
+      'TextEditorEdit',
+      'TextEditorEdit.insert',
+      'TextEditorEdit.replace',
+      'TextEditorEdit.delete',
+      'Position',
+      'Range',
+      'Selection',
+      'Selection.anchor',
+      'Selection.start'
+    ],
+    contributions: []
+  },
+  {
     description: 'Custom Data Sample',
     path: 'custom-data-sample',
     guide: '/api/extension-guides/custom-data-extension',
