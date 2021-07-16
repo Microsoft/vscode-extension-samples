@@ -31,6 +31,7 @@ It is not intended as a production quality extension.
 # How to run locally
 
 - Run `npm install` in terminal to install dependencies
+- Run `npm run compile` in terminal to do an initial compile
 - Run the `Run Extension` target in the Debug View. This will:
 	- Start a task `npm: watch` to compile the code
 	- Run the extension in a new VS Code window
