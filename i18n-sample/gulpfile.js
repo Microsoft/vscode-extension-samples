@@ -21,7 +21,7 @@ const inlineMap = true;
 const inlineSource = false;
 const outDest = 'out';
 
-// If all VS Code langaues are support you can use nls.coreLanguages
+// If all VS Code languages are support you can use nls.coreLanguages
 const languages = [{ folderName: 'jpn', id: 'ja' }];
 
 const cleanTask = function() {

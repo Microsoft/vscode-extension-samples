@@ -16,7 +16,7 @@ This folder contains a sample VS code extension that shows how to use the packag
 
 ## Running the Sample
 
-Localization values are only applied when running the gulp `build` task. During normally development which uses `tsc -watch` to compile no localization post processing happends. This speeds up development time.
+Localization values are only applied when running the gulp `build` task. During normally development which uses `tsc -watch` to compile no localization post processing happens. This speeds up development time.
 
 1. Ensure that you have `gulp-cli` installed globally using `npm install --global gulp-cli`.
 1. Run `npm install` to bring in the dependencies.
